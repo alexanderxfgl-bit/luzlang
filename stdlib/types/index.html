@@ -10,13 +10,9 @@
       
       
       
-        <link rel="canonical" href="https://elabsurdo984.github.io/luz-lang/language/functions/">
+        <link rel="canonical" href="https://elabsurdo984.github.io/luz-lang/stdlib/types/">
       
       
-        <link rel="prev" href="../format-strings/">
-      
-      
-        <link rel="next" href="../lambdas/">
       
       
         
@@ -27,7 +23,7 @@
     
     
       
-        <title>Functions - Luz Language</title>
+        <title>luz-types - Luz Language</title>
       
     
     
@@ -80,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#functions" class="md-skip">
+        <a href="#luz-types" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Functions
+              luz-types
             
           </span>
         </div>
@@ -285,13 +281,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../types/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../language/types/" class="md-tabs__link">
           
   
   
@@ -332,7 +326,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../stdlib/math/" class="md-tabs__link">
+        <a href="../math/" class="md-tabs__link">
           
   
   
@@ -634,10 +628,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -667,22 +659,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -700,7 +691,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -718,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../types/" class="md-nav__link">
+      <a href="../../language/types/" class="md-nav__link">
         
   
   
@@ -746,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../variables/" class="md-nav__link">
+      <a href="../../language/variables/" class="md-nav__link">
         
   
   
@@ -774,7 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operators/" class="md-nav__link">
+      <a href="../../language/operators/" class="md-nav__link">
         
   
   
@@ -802,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../control-flow/" class="md-nav__link">
+      <a href="../../language/control-flow/" class="md-nav__link">
         
   
   
@@ -830,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../format-strings/" class="md-nav__link">
+      <a href="../../language/format-strings/" class="md-nav__link">
         
   
   
@@ -855,37 +846,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Functions
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../language/functions/" class="md-nav__link">
         
   
   
@@ -901,127 +865,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#defining-a-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Defining a function
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Default parameters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#variadic-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Variadic functions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multiple-return-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Multiple return values
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#functions-as-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Functions as values
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#closures" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Closures
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recursion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recursion
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#type-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Type annotations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#higher-order-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Higher-order functions
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1034,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lambdas/" class="md-nav__link">
+      <a href="../../language/lambdas/" class="md-nav__link">
         
   
   
@@ -1062,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../collections/" class="md-nav__link">
+      <a href="../../language/collections/" class="md-nav__link">
         
   
   
@@ -1090,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oop/" class="md-nav__link">
+      <a href="../../language/oop/" class="md-nav__link">
         
   
   
@@ -1118,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../error-handling/" class="md-nav__link">
+      <a href="../../language/error-handling/" class="md-nav__link">
         
   
   
@@ -1146,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modules/" class="md-nav__link">
+      <a href="../../language/modules/" class="md-nav__link">
         
   
   
@@ -1274,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stdlib/math/" class="md-nav__link">
+      <a href="../math/" class="md-nav__link">
         
   
   
@@ -1302,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stdlib/random/" class="md-nav__link">
+      <a href="../random/" class="md-nav__link">
         
   
   
@@ -1330,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stdlib/io/" class="md-nav__link">
+      <a href="../io/" class="md-nav__link">
         
   
   
@@ -1358,7 +1201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stdlib/system/" class="md-nav__link">
+      <a href="../system/" class="md-nav__link">
         
   
   
@@ -1386,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stdlib/clock/" class="md-nav__link">
+      <a href="../clock/" class="md-nav__link">
         
   
   
@@ -1524,10 +1367,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#defining-a-function" class="md-nav__link">
+  <a href="#type-predicates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Defining a function
+        Type predicates
       
     </span>
   </a>
@@ -1535,10 +1378,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#default-parameters" class="md-nav__link">
+  <a href="#safe-casting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Default parameters
+        Safe casting
       
     </span>
   </a>
@@ -1546,76 +1389,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variadic-functions" class="md-nav__link">
+  <a href="#schema-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variadic functions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multiple-return-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Multiple return values
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#functions-as-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Functions as values
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#closures" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Closures
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recursion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recursion
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#type-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Type annotations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#higher-order-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Higher-order functions
+        Schema validation
       
     </span>
   </a>
@@ -1642,139 +1419,143 @@
   
 
 
-<h1 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h1>
-<h2 id="defining-a-function">Defining a function<a class="headerlink" href="#defining-a-function" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>function greet(name) {
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    return &quot;Hello, &quot; + name + &quot;!&quot;
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>}
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>write(greet(&quot;world&quot;))   # Hello, world!
+<h1 id="luz-types">luz-types<a class="headerlink" href="#luz-types" title="Permanent link">&para;</a></h1>
+<p>Type predicates, safe casting, and schema validation.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>from &quot;luz-types&quot; import types
 </span></code></pre></div>
+<hr />
+<h2 id="type-predicates">Type predicates<a class="headerlink" href="#type-predicates" title="Permanent link">&para;</a></h2>
+<p>Check the runtime type of any value without writing <code>typeof(x) == "..."</code> everywhere.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns <code>true</code> when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>types.is_int(x)</code></td>
+<td><code>x</code> is an integer</td>
+</tr>
+<tr>
+<td><code>types.is_float(x)</code></td>
+<td><code>x</code> is a float</td>
+</tr>
+<tr>
+<td><code>types.is_number(x)</code></td>
+<td><code>x</code> is an int or float</td>
+</tr>
+<tr>
+<td><code>types.is_string(x)</code></td>
+<td><code>x</code> is a string</td>
+</tr>
+<tr>
+<td><code>types.is_bool(x)</code></td>
+<td><code>x</code> is a boolean</td>
+</tr>
+<tr>
+<td><code>types.is_null(x)</code></td>
+<td><code>x</code> is <code>null</code></td>
+</tr>
+<tr>
+<td><code>types.is_list(x)</code></td>
+<td><code>x</code> is a list</td>
+</tr>
+<tr>
+<td><code>types.is_dict(x)</code></td>
+<td><code>x</code> is a dict</td>
+</tr>
+<tr>
+<td><code>types.is_callable(x)</code></td>
+<td><code>x</code> is a function or lambda</td>
+</tr>
+</tbody>
+</table>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>write(types.is_int(42))         # true
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>write(types.is_float(3.14))     # true
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>write(types.is_number(42))      # true
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>write(types.is_string(&quot;hi&quot;))    # true
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>write(types.is_bool(true))      # true
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>write(types.is_null(null))      # true
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>write(types.is_list([1, 2]))    # true
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>write(types.is_dict({&quot;a&quot;: 1}))  # true
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>write(types.is_callable(fn(x) =&gt; x))  # true
+</span></code></pre></div>
+<hr />
+<h2 id="safe-casting">Safe casting<a class="headerlink" href="#safe-casting" title="Permanent link">&para;</a></h2>
+<p>Convert values to another type with a descriptive error on failure instead of a raw <code>CastFault</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>types.safe_int(x)</code></td>
+<td>Convert to int — raises if not possible</td>
+</tr>
+<tr>
+<td><code>types.safe_float(x)</code></td>
+<td>Convert to float — raises if not possible</td>
+</tr>
+<tr>
+<td><code>types.safe_str(x)</code></td>
+<td>Convert to string — always succeeds</td>
+</tr>
+<tr>
+<td><code>types.safe_bool(x)</code></td>
+<td>Convert to boolean — always succeeds</td>
+</tr>
+</tbody>
+</table>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>write(types.safe_int(&quot;42&quot;))     # 42
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>write(types.safe_float(&quot;3.14&quot;)) # 3.14
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>write(types.safe_str(99))       # 99
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>write(types.safe_bool(0))       # false
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>attempt {
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    types.safe_int(&quot;abc&quot;)
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>} rescue (e) {
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    write(e)   # cannot cast abc to int
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>}
+</span></code></pre></div>
+<hr />
+<h2 id="schema-validation">Schema validation<a class="headerlink" href="#schema-validation" title="Permanent link">&para;</a></h2>
+<p><code>types.validate(data, schema, required)</code> checks that a dict matches an expected shape.</p>
 <ul>
-<li><code>return</code> exits the function with a value.</li>
-<li>A function that reaches the end without a <code>return</code> returns <code>null</code>.</li>
+<li><code>data</code> — the dict to validate</li>
+<li><code>schema</code> — a dict mapping field names to expected type strings</li>
+<li><code>required</code> — a list of required field names, or <code>null</code> to require all fields in the schema</li>
 </ul>
-<h2 id="default-parameters">Default parameters<a class="headerlink" href="#default-parameters" title="Permanent link">&para;</a></h2>
-<p>Parameters can have a default value. All required parameters must come before defaults.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>function greet(name, greeting = &quot;Hello&quot;) {
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    write($&quot;{greeting}, {name}!&quot;)
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>}
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>greet(&quot;Alice&quot;)             # Hello, Alice!
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>greet(&quot;Bob&quot;, &quot;Hi&quot;)         # Hi, Bob!
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>function connect(host, port = 8080, secure = false) {
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    write($&quot;{host}:{port} secure={secure}&quot;)
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>}
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>connect(&quot;localhost&quot;)                # localhost:8080 secure=false
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>connect(&quot;example.com&quot;, 443, true)   # example.com:443 secure=true
-</span></code></pre></div>
-<h2 id="variadic-functions">Variadic functions<a class="headerlink" href="#variadic-functions" title="Permanent link">&para;</a></h2>
-<p>A <code>...name</code> parameter collects all extra arguments into a list. It must be the last parameter.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>function sum(...nums) {
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    total = 0
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    for n in nums { total += n }
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    return total
+<p>Raises a <code>UserFault</code> on the first violation found.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>schema = {
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    &quot;name&quot;: &quot;string&quot;,
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &quot;age&quot;:  &quot;int&quot;,
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    &quot;active&quot;: &quot;bool&quot;
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>}
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>write(sum(1, 2, 3))         # 6
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>write(sum(10, 20, 30, 40))  # 100
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>write(sum())                # 0
-</span></code></pre></div>
-<p>Variadic can be combined with regular parameters:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>function log(level, ...messages) {
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    for msg in messages {
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        write($&quot;[{level}] {msg}&quot;)
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    }
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>}
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>log(&quot;INFO&quot;, &quot;Server started&quot;, &quot;Ready&quot;)
-</span></code></pre></div>
-<h2 id="multiple-return-values">Multiple return values<a class="headerlink" href="#multiple-return-values" title="Permanent link">&para;</a></h2>
-<p>A function can return multiple values. Use destructuring assignment to unpack them.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>function min_max(a, b) {
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    if a &lt; b { return a, b }
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    else      { return b, a }
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>}
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>lo, hi = min_max(8, 3)
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>write(lo)   # 3
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>write(hi)   # 8
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>function coords() {
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    return 4, 7, 9
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>}
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>x, y, z = coords()
-</span></code></pre></div>
-<h2 id="functions-as-values">Functions as values<a class="headerlink" href="#functions-as-values" title="Permanent link">&para;</a></h2>
-<p>Functions are first-class values — they can be stored and passed as arguments:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>function double(x) {
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    return x * 2
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>}
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>f = double
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>write(f(5))   # 10
-</span></code></pre></div>
-<h2 id="closures">Closures<a class="headerlink" href="#closures" title="Permanent link">&para;</a></h2>
-<p>Inner functions capture variables from the enclosing scope:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>function make_counter() {
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    count = 0
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    function increment() {
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        count = count + 1
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        return count
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    }
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    return increment
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>}
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>counter = make_counter()
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>write(counter())   # 1
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>write(counter())   # 2
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>write(counter())   # 3
-</span></code></pre></div>
-<h2 id="recursion">Recursion<a class="headerlink" href="#recursion" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>function factorial(n) {
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    if n &lt;= 1 { return 1 }
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    return n * factorial(n - 1)
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>}
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>write(factorial(6))   # 720
-</span></code></pre></div>
-<h2 id="type-annotations">Type annotations<a class="headerlink" href="#type-annotations" title="Permanent link">&para;</a></h2>
-<p>Parameters and return values can be annotated with a type. The type is checked at call time — a mismatch raises a <code>TypeViolationFault</code>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>function add(a: int, b: int) -&gt; int {
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    return a + b
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>}
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>write(add(2, 3))   # 5
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>attempt {
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    add(2, &quot;x&quot;)
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>} rescue (e) {
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    write(e)   # TypeViolationFault: Argument &#39;b&#39; expects type &#39;int&#39;, got &#39;string&#39;
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>}
-</span></code></pre></div>
-<p>Return type annotations are also enforced:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>function positive(x: float) -&gt; bool {
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    return x &gt; 0
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>}
-</span></code></pre></div>
-<p>For class types, a subclass satisfies a parent type annotation:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>class Animal {}
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>class Dog extends Animal {}
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>function greet(a: Animal) { write(&quot;hello&quot;) }
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>greet(Dog())   # works — Dog extends Animal
-</span></code></pre></div>
-<p>Valid type names: <code>int</code>, <code>float</code>, <code>number</code>, <code>string</code>, <code>bool</code>, <code>list</code>, <code>dict</code>, <code>null</code>, or any class name. Unannotated parameters accept any type.</p>
-<h2 id="higher-order-functions">Higher-order functions<a class="headerlink" href="#higher-order-functions" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>function apply_twice(f, x) {
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    return f(f(x))
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>}
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>write(apply_twice(fn(x) =&gt; x * 2, 3))   # 12
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>data = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30, &quot;active&quot;: true}
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>types.validate(data, schema, null)   # passes
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a># Missing required field
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>attempt {
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    types.validate({&quot;name&quot;: &quot;Alice&quot;}, schema, null)
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>} rescue (e) {
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    write(e)   # missing required field &#39;age&#39;
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>}
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a># Wrong type
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>attempt {
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    types.validate({&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: &quot;30&quot;, &quot;active&quot;: true}, schema, null)
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>} rescue (e) {
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    write(e)   # field &#39;age&#39; expected int, got string
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>}
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a># Only &#39;name&#39; is required — other fields are optional
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>types.validate({&quot;name&quot;: &quot;Alice&quot;}, schema, [&quot;name&quot;])   # passes
 </span></code></pre></div>
 
 
@@ -1808,44 +1589,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../format-strings/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Format Strings">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Format Strings
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../lambdas/" class="md-footer__link md-footer__link--next" aria-label="Next: Lambdas">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Lambdas
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
