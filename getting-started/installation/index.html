@@ -639,10 +639,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#clone-the-repository" class="md-nav__link">
+  <a href="#windows-standalone-installer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Clone the repository
+        Windows (standalone installer)
       
     </span>
   </a>
@@ -650,10 +650,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vs-code-syntax-highlighting" class="md-nav__link">
+  <a href="#from-source" class="md-nav__link">
     <span class="md-ellipsis">
       
-        VS Code syntax highlighting
+        From source
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs-code-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VS Code extension
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-build-the-c-lexer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional: build the C lexer
       
     </span>
   </a>
@@ -1477,10 +1499,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#clone-the-repository" class="md-nav__link">
+  <a href="#windows-standalone-installer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Clone the repository
+        Windows (standalone installer)
       
     </span>
   </a>
@@ -1488,10 +1510,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vs-code-syntax-highlighting" class="md-nav__link">
+  <a href="#from-source" class="md-nav__link">
     <span class="md-ellipsis">
       
-        VS Code syntax highlighting
+        From source
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs-code-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VS Code extension
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-build-the-c-lexer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional: build the C lexer
       
     </span>
   </a>
@@ -1519,19 +1563,33 @@
 
 
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<p>Luz requires <strong>Python 3.8 or higher</strong> and has no external dependencies.</p>
-<h2 id="clone-the-repository">Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Elabsurdo984/luz-lang.git
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>luz-lang
+<h2 id="windows-standalone-installer">Windows (standalone installer)<a class="headerlink" href="#windows-standalone-installer" title="Permanent link">&para;</a></h2>
+<p>Download the installer from the <a href="https://elabsurdo984.github.io/luz-lang/download/">download page</a>. It bundles <code>luz.exe</code>, <code>ray.exe</code>, the standard libraries, and optionally example programs. No Python required.</p>
+<p>After installation, <code>luz</code> and <code>ray</code> are available from any terminal:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>luz<span class="w"> </span>program.luz<span class="w">   </span><span class="c1"># run a file</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>luz<span class="w">               </span><span class="c1"># open the REPL</span>
 </span></code></pre></div>
-<p>That's it — no build step, no package manager, no virtual environment needed.</p>
-<h2 id="vs-code-syntax-highlighting">VS Code syntax highlighting<a class="headerlink" href="#vs-code-syntax-highlighting" title="Permanent link">&para;</a></h2>
-<p>A syntax highlighting extension for VS Code is included in the <code>vscode-luz/</code> folder.</p>
+<h2 id="from-source">From source<a class="headerlink" href="#from-source" title="Permanent link">&para;</a></h2>
+<p>Requires <strong>Python 3.8 or higher</strong>. No external dependencies.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Elabsurdo984/luz-lang.git
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>luz-lang
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>python<span class="w"> </span>main.py<span class="w">          </span><span class="c1"># open the REPL</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>python<span class="w"> </span>main.py<span class="w"> </span>file.luz<span class="w"> </span><span class="c1"># run a file</span>
+</span></code></pre></div>
+<p>No build step, no package manager, no virtual environment needed.</p>
+<h2 id="vs-code-extension">VS Code extension<a class="headerlink" href="#vs-code-extension" title="Permanent link">&para;</a></h2>
+<p>A full-featured language extension for VS Code is included in the <code>vscode-luz/</code> folder:</p>
 <ol>
-<li>Copy the folder to <code>~/.vscode/extensions/</code></li>
+<li>Copy <code>vscode-luz/</code> to <code>~/.vscode/extensions/</code></li>
 <li>Restart VS Code</li>
 </ol>
-<p>Luz files (<code>.luz</code>) will now have keyword highlighting.</p>
+<p>Features: syntax highlighting, autocompletion, inline error detection, hover documentation, and snippets.</p>
+<h2 id="optional-build-the-c-lexer">Optional: build the C lexer<a class="headerlink" href="#optional-build-the-c-lexer" title="Permanent link">&para;</a></h2>
+<p>For faster tokenisation, compile the C lexer (requires MSYS2 on Windows):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>luz/c_lexer
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>make
+</span></code></pre></div>
+<p>The interpreter automatically uses <code>luz_lexer.dll</code> (Windows) or <code>luz_lexer.so</code> (Linux/macOS) if it is present.</p>
 
 
 

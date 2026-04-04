@@ -802,6 +802,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fixed-size-numeric-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed-size numeric types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nullable-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nullable types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#type-inspection" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1532,6 +1554,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fixed-size-numeric-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed-size numeric types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nullable-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nullable types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#type-inspection" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1585,7 +1629,7 @@
 
 
 <h1 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h1>
-<p>Luz is dynamically typed. Every value has a runtime type that is checked when the value is used.</p>
+<p>Luz is dynamically typed by default, with optional static type annotations that are checked both at runtime and by the built-in static type checker.</p>
 <h2 id="primitive-types">Primitive types<a class="headerlink" href="#primitive-types" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1645,20 +1689,95 @@
 </tr>
 </tbody>
 </table>
+<p>Generic annotations narrow the element type:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>scores: list[int]           = [90, 85, 70]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>labels: list[string]        = [&quot;a&quot;, &quot;b&quot;]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>prices: dict[string, float] = {&quot;item&quot;: 1.5}
+</span></code></pre></div>
+<h2 id="fixed-size-numeric-types">Fixed-size numeric types<a class="headerlink" href="#fixed-size-numeric-types" title="Permanent link">&para;</a></h2>
+<p>For performance-sensitive or memory-constrained code, Luz provides fixed-width integer and float types. The interpreter enforces the valid range at assignment time.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int8</code></td>
+<td>−128 to 127</td>
+</tr>
+<tr>
+<td><code>int16</code></td>
+<td>−32 768 to 32 767</td>
+</tr>
+<tr>
+<td><code>int32</code></td>
+<td>−2 147 483 648 to 2 147 483 647</td>
+</tr>
+<tr>
+<td><code>int64</code></td>
+<td>−9 007 199 254 740 992 to 9 007 199 254 740 992</td>
+</tr>
+<tr>
+<td><code>uint8</code></td>
+<td>0 to 255</td>
+</tr>
+<tr>
+<td><code>uint16</code></td>
+<td>0 to 65 535</td>
+</tr>
+<tr>
+<td><code>uint32</code></td>
+<td>0 to 4 294 967 295</td>
+</tr>
+<tr>
+<td><code>float32</code></td>
+<td>32-bit IEEE 754 float</td>
+</tr>
+<tr>
+<td><code>float64</code></td>
+<td>64-bit IEEE 754 float</td>
+</tr>
+</tbody>
+</table>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>byte: uint8  = 255
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>temp: int16  = -200
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>pi32: float32 = 3.14159
+</span></code></pre></div>
+<p>Narrower fixed-size integers satisfy wider annotations (widening is safe):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>small: int8  = 42
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>wider: int32 = small   # ok — int8 widens to int32
+</span></code></pre></div>
+<p>Out-of-range assignments raise a <code>TypeViolationFault</code>.</p>
+<h2 id="nullable-types">Nullable types<a class="headerlink" href="#nullable-types" title="Permanent link">&para;</a></h2>
+<p>Appending <code>?</code> to any type allows <code>null</code> in addition to the base type:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>name: string? = null     # ok
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>name = &quot;Alice&quot;           # ok
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>function find(id: int) -&gt; string? {
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    # ...
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    return null
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>}
+</span></code></pre></div>
+<p>Use <code>??</code> to provide a fallback when the value is <code>null</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>display = name ?? &quot;Anonymous&quot;
+</span></code></pre></div>
 <h2 id="type-inspection">Type inspection<a class="headerlink" href="#type-inspection" title="Permanent link">&para;</a></h2>
 <p>Use <code>typeof()</code> to get the type name as a string:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>write(typeof(42))        # int
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>write(typeof(3.14))      # float
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>write(typeof(&quot;hello&quot;))   # string
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>write(typeof(true))      # bool
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>write(typeof(null))      # null
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>write(typeof([1, 2]))    # list
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>write(typeof({&quot;a&quot;: 1}))  # dict
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>write(typeof(42))        # int
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>write(typeof(3.14))      # float
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>write(typeof(&quot;hello&quot;))   # string
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>write(typeof(true))      # bool
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>write(typeof(null))      # null
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>write(typeof([1, 2]))    # list
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>write(typeof({&quot;a&quot;: 1}))  # dict
 </span></code></pre></div>
 <p>For objects, <code>typeof()</code> returns the class name:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>class Dog { }
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>d = Dog()
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>write(typeof(d))   # Dog
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>class Dog { }
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>d = Dog()
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>write(typeof(d))   # Dog
 </span></code></pre></div>
 <h2 id="escape-sequences-in-strings">Escape sequences in strings<a class="headerlink" href="#escape-sequences-in-strings" title="Permanent link">&para;</a></h2>
 <table>
@@ -1691,9 +1810,9 @@
 </tr>
 </tbody>
 </table>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>write(&quot;line one\nline two&quot;)
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>write(&quot;column1\tcolumn2&quot;)
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>write(&quot;She said \&quot;hello\&quot;&quot;)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>write(&quot;line one\nline two&quot;)
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>write(&quot;column1\tcolumn2&quot;)
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>write(&quot;She said \&quot;hello\&quot;&quot;)
 </span></code></pre></div>
 <h2 id="type-casting">Type casting<a class="headerlink" href="#type-casting" title="Permanent link">&para;</a></h2>
 <p>Use the built-in cast functions to convert between types:</p>
@@ -1727,19 +1846,19 @@
 </tr>
 </tbody>
 </table>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>write(to_int(3.9))      # 3
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>write(to_float(&quot;2.5&quot;))  # 2.5
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>write(to_str(42))       # &quot;42&quot;
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>write(to_bool(0))       # false
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>write(to_num(&quot;10&quot;))     # 10
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>write(to_num(&quot;3.14&quot;))   # 3.14
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>write(to_int(3.9))      # 3
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>write(to_float(&quot;2.5&quot;))  # 2.5
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>write(to_str(42))       # &quot;42&quot;
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>write(to_bool(0))       # false
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>write(to_num(&quot;10&quot;))     # 10
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>write(to_num(&quot;3.14&quot;))   # 3.14
 </span></code></pre></div>
 <p>If the conversion fails, a <code>CastFault</code> is raised:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>attempt {
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    x = to_int(&quot;abc&quot;)
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>} rescue (e) {
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    write(e)   # CastFault: cannot convert &quot;abc&quot; to int
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>attempt {
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    x = to_int(&quot;abc&quot;)
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>} rescue (e) {
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    write(e)   # CastFault: cannot convert &quot;abc&quot; to int
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>}
 </span></code></pre></div>
 
 

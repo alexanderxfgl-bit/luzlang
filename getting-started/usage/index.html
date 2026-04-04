@@ -689,10 +689,43 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#parse-only-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parse-only check
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#run-the-test-suite" class="md-nav__link">
     <span class="md-ellipsis">
       
         Run the test suite
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-all-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run all examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-standalone-installer-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the standalone installer (Windows)
       
     </span>
   </a>
@@ -1510,10 +1543,43 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#parse-only-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parse-only check
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#run-the-test-suite" class="md-nav__link">
     <span class="md-ellipsis">
       
         Run the test suite
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-all-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run all examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-standalone-installer-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the standalone installer (Windows)
       
     </span>
   </a>
@@ -1545,11 +1611,11 @@
 <p>Run <code>main.py</code> with no arguments to open the interactive shell:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>main.py
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Luz Interpreter v1.8.0 - Type &#39;exit&#39; to terminate
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Luz Interpreter v1.18.0 - Type &#39;exit&#39; to terminate
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Luz &gt; x = 10
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Luz &gt; write(x * 2)
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>20
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Luz &gt; name = &quot;world&quot;
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Luz &gt; name: string = &quot;world&quot;
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Luz &gt; write($&quot;Hello {name}!&quot;)
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Hello world!
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Luz &gt; exit
@@ -1559,10 +1625,28 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>program.luz
 </span></code></pre></div>
 <p>Any <code>.luz</code> file can be executed this way. The interpreter runs the file from top to bottom and exits when it reaches the end.</p>
-<h2 id="run-the-test-suite">Run the test suite<a class="headerlink" href="#run-the-test-suite" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>tests/test_suite.py
+<h2 id="parse-only-check">Parse-only check<a class="headerlink" href="#parse-only-check" title="Permanent link">&para;</a></h2>
+<p>The <code>--check</code> flag runs the lexer and parser only, returning any syntax errors as JSON. This is used by the VS Code extension:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>main.py<span class="w"> </span>--check<span class="w"> </span>program.luz
 </span></code></pre></div>
-<p>All built-in tests will run and report pass/fail.</p>
+<p>Output: <code>[]</code> on success, or <code>[{"line": N, "message": "..."}]</code> on error.</p>
+<h2 id="run-the-test-suite">Run the test suite<a class="headerlink" href="#run-the-test-suite" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/test_suite.py<span class="w"> </span>-v
+</span></code></pre></div>
+<p>Run a specific test class or case:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/test_suite.py::TestArithmetic<span class="w"> </span>-v
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/test_suite.py::TestArithmetic::test_int_addition<span class="w"> </span>-v
+</span></code></pre></div>
+<h2 id="run-all-examples">Run all examples<a class="headerlink" href="#run-all-examples" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>run_examples.py
+</span></code></pre></div>
+<p>Runs every <code>.luz</code> file in <code>examples/</code>, prints a pass/fail/interactive status for each, and exits with code 1 if any failures are found.</p>
+<h2 id="using-the-standalone-installer-windows">Using the standalone installer (Windows)<a class="headerlink" href="#using-the-standalone-installer-windows" title="Permanent link">&para;</a></h2>
+<p>Download and run the installer from the <a href="https://elabsurdo984.github.io/luz-lang/download/">download page</a>. After installation <code>luz</code> is available from any terminal:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>luz<span class="w"> </span>program.luz<span class="w">    </span><span class="c1"># run a file</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>luz<span class="w">                </span><span class="c1"># open the REPL</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>ray<span class="w"> </span>install<span class="w"> </span>user/repo<span class="w">   </span><span class="c1"># install a package</span>
+</span></code></pre></div>
 
 
 

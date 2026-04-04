@@ -988,6 +988,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#generic-type-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic type annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#indexing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1021,10 +1032,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#membership-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Membership test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#slicing" class="md-nav__link">
     <span class="md-ellipsis">
       
         Slicing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-comprehensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List comprehensions
       
     </span>
   </a>
@@ -1067,6 +1100,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string-dot-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String dot methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1082,10 +1132,32 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#generic-type-annotations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic type annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#access-and-assignment" class="md-nav__link">
     <span class="md-ellipsis">
       
         Access and assignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#membership-test_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Membership test
       
     </span>
   </a>
@@ -1622,6 +1694,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#generic-type-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic type annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#indexing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1655,10 +1738,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#membership-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Membership test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#slicing" class="md-nav__link">
     <span class="md-ellipsis">
       
         Slicing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-comprehensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List comprehensions
       
     </span>
   </a>
@@ -1701,6 +1806,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string-dot-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String dot methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1716,10 +1838,32 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#generic-type-annotations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic type annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#access-and-assignment" class="md-nav__link">
     <span class="md-ellipsis">
       
         Access and assignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#membership-test_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Membership test
       
     </span>
   </a>
@@ -1791,31 +1935,46 @@
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mixed  = [1, &quot;two&quot;, 3.0, true, null]
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>empty  = []
 </span></code></pre></div>
+<h3 id="generic-type-annotations">Generic type annotations<a class="headerlink" href="#generic-type-annotations" title="Permanent link">&para;</a></h3>
+<p>Annotate the element type for static checking:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>scores: list[int]    = [88, 72, 95]
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>names:  list[string] = [&quot;Alice&quot;, &quot;Bob&quot;]
+</span></code></pre></div>
 <h3 id="indexing">Indexing<a class="headerlink" href="#indexing" title="Permanent link">&para;</a></h3>
 <p>Zero-based. Negative indices count from the end:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>write(fruits[0])    # apple
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>write(fruits[-1])   # cherry  (last element)
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>write(fruits[-2])   # banana
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>write(fruits[0])    # apple
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>write(fruits[-1])   # cherry  (last element)
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>write(fruits[-2])   # banana
 </span></code></pre></div>
 <h3 id="assignment-by-index">Assignment by index<a class="headerlink" href="#assignment-by-index" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>fruits[1] = &quot;mango&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>fruits[1] = &quot;mango&quot;
 </span></code></pre></div>
 <h3 id="iteration">Iteration<a class="headerlink" href="#iteration" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>for fruit in fruits {
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    write(fruit)
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>for fruit in fruits {
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    write(fruit)
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>}
+</span></code></pre></div>
+<h3 id="membership-test">Membership test<a class="headerlink" href="#membership-test" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>write(&quot;apple&quot; in fruits)      # true
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>write(&quot;grape&quot; not in fruits)  # true
 </span></code></pre></div>
 <h3 id="slicing">Slicing<a class="headerlink" href="#slicing" title="Permanent link">&para;</a></h3>
 <p>Extract a sub-list using <code>[start:end]</code> or <code>[start:end:step]</code>. Indices are end-exclusive. Negative indices count from the end.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nums = [10, 20, 30, 40, 50]
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>write(nums[1:3])     # [20, 30]
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>write(nums[:3])      # [10, 20, 30]
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>write(nums[2:])      # [30, 40, 50]
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>write(nums[::2])     # [10, 30, 50]   (every other element)
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>write(nums[::-1])    # [50, 40, 30, 20, 10]  (reversed)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>nums = [10, 20, 30, 40, 50]
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>write(nums[1:3])     # [20, 30]
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>write(nums[:3])      # [10, 20, 30]
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>write(nums[2:])      # [30, 40, 50]
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>write(nums[::2])     # [10, 30, 50]   (every other element)
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>write(nums[::-1])    # [50, 40, 30, 20, 10]  (reversed)
 </span></code></pre></div>
 <p>Slice indices must be integers. A step of <code>0</code> raises a <code>ZeroDivisionFault</code>.</p>
+<h3 id="list-comprehensions">List comprehensions<a class="headerlink" href="#list-comprehensions" title="Permanent link">&para;</a></h3>
+<p>Build a new list from an expression and an optional filter:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>squares = [x * x for x in [1, 2, 3, 4, 5]]          # [1, 4, 9, 16, 25]
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>evens   = [x for x in range(1, 10) if even(x)]       # [2, 4, 6, 8]
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>upper   = [s.uppercase() for s in [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]]   # [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
+</span></code></pre></div>
 <h3 id="list-built-ins">List built-ins<a class="headerlink" href="#list-built-ins" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1845,86 +2004,151 @@
 <td><code>insert(list, index, value)</code></td>
 <td>Insert value at index, shifting elements right</td>
 </tr>
+<tr>
+<td><code>sum(list)</code></td>
+<td>Sum all numeric elements</td>
+</tr>
 </tbody>
 </table>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>nums = [1, 2, 4, 5]
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>insert(nums, 2, 3)
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>write(nums)   # [1, 2, 3, 4, 5]
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>nums = [1, 2, 4, 5]
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>insert(nums, 2, 3)
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>write(nums)       # [1, 2, 3, 4, 5]
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>write(sum(nums))  # 15
 </span></code></pre></div>
 <h3 id="list-dot-methods">List dot methods<a class="headerlink" href="#list-dot-methods" title="Permanent link">&para;</a></h3>
-<p>All list operations are also available as dot methods. Calling a method with the wrong number of arguments raises an <code>ArityFault</code>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>nums = [1, 2, 3]
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>nums.append(4)          # [1, 2, 3, 4]
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>last = nums.pop()       # 4  — removes and returns the last element
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>write(nums.len())       # 3
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>write(nums.contains(2)) # true
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>write(nums.contains(9)) # false
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>words = [&quot;hello&quot;, &quot;world&quot;]
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>write(words.join(&quot;, &quot;))  # hello, world
-</span></code></pre></div>
 <table>
 <thead>
 <tr>
 <th>Method</th>
-<th>Equivalent built-in</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>list.append(value)</code></td>
-<td><code>append(list, value)</code></td>
+<td>Add element to the end</td>
 </tr>
 <tr>
 <td><code>list.pop()</code></td>
-<td><code>pop(list)</code></td>
+<td>Remove and return the last element</td>
 </tr>
 <tr>
 <td><code>list.pop(index)</code></td>
-<td><code>pop(list, index)</code></td>
+<td>Remove and return element at index</td>
 </tr>
 <tr>
 <td><code>list.len()</code></td>
-<td><code>len(list)</code></td>
+<td>Number of elements</td>
 </tr>
 <tr>
 <td><code>list.contains(value)</code></td>
-<td>—</td>
+<td>True if value is in the list</td>
 </tr>
 <tr>
 <td><code>list.join(sep)</code></td>
-<td><code>join(sep, list)</code></td>
+<td>Join elements into a string</td>
+</tr>
+<tr>
+<td><code>list.sort()</code></td>
+<td>Sort in place (ascending)</td>
+</tr>
+<tr>
+<td><code>list.reverse()</code></td>
+<td>Reverse in place</td>
 </tr>
 </tbody>
 </table>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nums = [3, 1, 4, 1, 5, 9]
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>nums.sort()
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>write(nums)              # [1, 1, 3, 4, 5, 9]
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>nums.reverse()
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>write(nums)              # [9, 5, 4, 3, 1, 1]
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>write(nums.contains(4))  # true
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>write(nums.len())        # 6
+</span></code></pre></div>
 <hr />
 <h2 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h2>
 <p>Strings support indexing and negative indices:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>s = &quot;hello&quot;
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>write(s[0])    # h
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>write(s[-1])   # o
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>s = &quot;hello&quot;
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>write(s[0])    # h
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>write(s[-1])   # o
 </span></code></pre></div>
 <p>Strings also support slicing:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>write(s[1:3])   # el
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>write(s[:3])    # hel
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>write(s[1:])    # ello
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>write(s[1:3])   # el
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>write(s[:3])    # hel
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>write(s[1:])    # ello
+</span></code></pre></div>
+<p>Membership test:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>write(&quot;ell&quot; in &quot;hello&quot;)   # true
+</span></code></pre></div>
+<h3 id="string-dot-methods">String dot methods<a class="headerlink" href="#string-dot-methods" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s.len()</code></td>
+<td>String length</td>
+</tr>
+<tr>
+<td><code>s.trim()</code></td>
+<td>Remove surrounding whitespace</td>
+</tr>
+<tr>
+<td><code>s.uppercase()</code></td>
+<td>Convert to uppercase</td>
+</tr>
+<tr>
+<td><code>s.lowercase()</code></td>
+<td>Convert to lowercase</td>
+</tr>
+<tr>
+<td><code>s.swap(old, new)</code></td>
+<td>Replace all occurrences of <code>old</code> with <code>new</code></td>
+</tr>
+<tr>
+<td><code>s.split(sep?)</code></td>
+<td>Split into a list (default sep: whitespace)</td>
+</tr>
+</tbody>
+</table>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>title = &quot;  Hello, World!  &quot;
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>write(title.trim())                   # Hello, World!
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>write(title.trim().lowercase())       # hello, world!
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>write(&quot;a,b,c&quot;.split(&quot;,&quot;))            # [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>write(title.trim().len())            # 13
+</span></code></pre></div>
+<p>Methods can be chained:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>slug = &quot;  My Title  &quot;.trim().lowercase().swap(&quot; &quot;, &quot;-&quot;)
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>write(slug)   # my-title
 </span></code></pre></div>
 <hr />
 <h2 id="dictionaries">Dictionaries<a class="headerlink" href="#dictionaries" title="Permanent link">&para;</a></h2>
 <p>A dictionary maps keys to values. Keys must be strings or numbers.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>person = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>person = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}
+</span></code></pre></div>
+<h3 id="generic-type-annotations_1">Generic type annotations<a class="headerlink" href="#generic-type-annotations_1" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>prices: dict[string, float] = {&quot;apple&quot;: 1.5, &quot;banana&quot;: 0.8}
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>counts: dict[string, int]   = {&quot;a&quot;: 1, &quot;b&quot;: 2}
 </span></code></pre></div>
 <h3 id="access-and-assignment">Access and assignment<a class="headerlink" href="#access-and-assignment" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>write(person[&quot;name&quot;])   # Alice
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>person[&quot;age&quot;] = 31
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>person[&quot;city&quot;] = &quot;Madrid&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>write(person[&quot;name&quot;])   # Alice
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>person[&quot;age&quot;] = 31
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>person[&quot;city&quot;] = &quot;Madrid&quot;
+</span></code></pre></div>
+<h3 id="membership-test_1">Membership test<a class="headerlink" href="#membership-test_1" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>write(&quot;name&quot; in person)      # true
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>write(&quot;email&quot; not in person) # true
 </span></code></pre></div>
 <h3 id="iteration_1">Iteration<a class="headerlink" href="#iteration_1" title="Permanent link">&para;</a></h3>
 <p>Iterating over a dictionary yields its keys:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>for key in person {
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    write($&quot;{key}: {person[key]}&quot;)
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>for key in person {
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    write($&quot;{key}: {person[key]}&quot;)
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>}
 </span></code></pre></div>
 <h3 id="dictionary-built-ins">Dictionary built-ins<a class="headerlink" href="#dictionary-built-ins" title="Permanent link">&para;</a></h3>
 <table>
@@ -1954,15 +2178,6 @@
 </tbody>
 </table>
 <h3 id="dictionary-dot-methods">Dictionary dot methods<a class="headerlink" href="#dictionary-dot-methods" title="Permanent link">&para;</a></h3>
-<p>All dictionary operations are also available as dot methods:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>person = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>write(person.keys())          # [&quot;name&quot;, &quot;age&quot;]
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>write(person.values())        # [&quot;Alice&quot;, 30]
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>write(person.len())           # 2
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>write(person.contains(&quot;age&quot;)) # true
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>person.remove(&quot;age&quot;)
-</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1993,6 +2208,14 @@
 </tr>
 </tbody>
 </table>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>person = {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>write(person.keys())           # [&quot;name&quot;, &quot;age&quot;]
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>write(person.values())         # [&quot;Alice&quot;, 30]
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>write(person.len())            # 2
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>write(person.contains(&quot;age&quot;))  # true
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>person.remove(&quot;age&quot;)
+</span></code></pre></div>
 
 
 

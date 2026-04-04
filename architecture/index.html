@@ -1411,6 +1411,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#type-checker-luztypecheckerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type Checker (luz/typechecker.py)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#interpreter-luzinterpreterpy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1529,6 +1540,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#type-checker-luztypecheckerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type Checker (luz/typechecker.py)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#interpreter-luzinterpreterpy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1582,28 +1604,34 @@
 
 
 <h1 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h1>
-<p>Luz follows a classic three-stage interpreter pipeline:</p>
+<p>Luz follows a four-stage pipeline: source text is lexed, parsed, type-checked, and then evaluated.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Source code (text)
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>      |
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   [Lexer]         luz/lexer.py
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   [Lexer]           luz/lexer.py
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>      |
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a> Token stream
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      |
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>   [Parser]        luz/parser.py
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>   [Parser]          luz/parser.py
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>      |
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  AST (tree)
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>      |
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a> [Interpreter]     luz/interpreter.py
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a> [TypeChecker]       luz/typechecker.py
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>      |
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>   Result
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  Error list
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>      |
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a> [Interpreter]       luz/interpreter.py
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>      |
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>   Result
 </span></code></pre></div>
 <h2 id="lexer-luzlexerpy">Lexer (<code>luz/lexer.py</code>)<a class="headerlink" href="#lexer-luzlexerpy" title="Permanent link">&para;</a></h2>
 <p>Converts raw source text into a flat list of <code>Token</code> objects.</p>
 <ul>
 <li>Handles integers, floats (including <code>.5</code> notation), strings, format strings, identifiers, keywords, and all operators.</li>
+<li>Emits a <code>QUESTION</code> token for <code>?</code> to support nullable type annotations (<code>T?</code>).</li>
 <li>Tracks line numbers on every token so errors can report the correct source line.</li>
 <li>Resolves string escape sequences (<code>\n</code>, <code>\t</code>, <code>\\</code>, <code>\"</code>) at this stage.</li>
 <li>Format strings store the raw template (e.g. <code>"Hello {name}"</code>) — expression parsing happens later in the parser.</li>
+<li>Optionally delegates to a C implementation (<code>luz/c_lexer/luz_lexer.dll</code> / <code>.so</code>) for faster tokenisation.</li>
 </ul>
 <h2 id="parser-luzparserpy">Parser (<code>luz/parser.py</code>)<a class="headerlink" href="#parser-luzparserpy" title="Permanent link">&para;</a></h2>
 <p>Consumes the token stream and builds an <strong>Abstract Syntax Tree (AST)</strong> using a <strong>recursive descent parser</strong>.</p>
@@ -1611,11 +1639,24 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>logical_or → logical_and → logical_not → comparison
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>           → arithmetic → term → power → factor
 </span></code></pre></div>
-<p>Each node type (<code>BinOpNode</code>, <code>IfNode</code>, <code>CallNode</code>, <code>ClassDefNode</code>, etc.) is a plain Python class defined at the top of the file. Nodes hold references to their child nodes, forming a tree.</p>
+<p>Each node type (<code>BinOpNode</code>, <code>IfNode</code>, <code>CallNode</code>, <code>ClassDefNode</code>, <code>StructDefNode</code>, etc.) is a plain Python class defined at the top of the file. Nodes hold references to their child nodes, forming a tree.</p>
 <p>Format string parsing: the lexer stores raw template text; the parser splits it on <code>{...}</code> (tracking brace depth for nesting), then sub-parses each embedded expression using a fresh <code>Lexer</code> + <code>Parser</code>.</p>
+<p>Type expressions (used in variable annotations and function signatures) are parsed by <code>parse_type_expr()</code>, which produces strings like <code>"int"</code>, <code>"string?"</code>, <code>"list[int]"</code>, or <code>"dict[string, float]"</code>.</p>
+<h2 id="type-checker-luztypecheckerpy">Type Checker (<code>luz/typechecker.py</code>)<a class="headerlink" href="#type-checker-luztypecheckerpy" title="Permanent link">&para;</a></h2>
+<p>Walks the AST before execution and collects type errors without running any code. The main entry point is <code>TypeChecker().check(ast)</code>, which returns a list of <code>TypeCheckError</code> objects.</p>
+<p>Key responsibilities:</p>
+<ul>
+<li><strong>Typed variable declarations</strong> — checks that the assigned value matches the declared type annotation.</li>
+<li><strong>Function call arity</strong> — checks that the number of arguments (positional + keyword) falls within the allowed range, accounting for default parameters.</li>
+<li><strong>Function return type</strong> — checks that <code>return</code> expressions match the declared <code>-&gt; type</code> annotation.</li>
+<li><strong>Class attribute inference</strong> — scans the <code>init</code> body to build a map of <code>self.&lt;attr&gt;</code> types, enabling attribute access checks on typed instances.</li>
+<li><strong>Unused variable / import / parameter detection</strong> — reports identifiers that are declared but never read (Go-style).</li>
+<li><strong>Type inference</strong> — propagates types through arithmetic (<code>int + float → float</code>), function calls, and binary operations.</li>
+</ul>
+<p>The <code>T</code> class defines type constants (<code>T.INT</code>, <code>T.STRING</code>, etc.) and a <code>T.compatible(declared, actual)</code> predicate that handles nullable types, generic collections, and fixed-size numeric widening.</p>
 <h2 id="interpreter-luzinterpreterpy">Interpreter (<code>luz/interpreter.py</code>)<a class="headerlink" href="#interpreter-luzinterpreterpy" title="Permanent link">&para;</a></h2>
 <p>Walks the AST using the <strong>Visitor pattern</strong>: <code>visit(node)</code> dispatches to <code>visit_IfNode</code>, <code>visit_BinOpNode</code>, etc. based on the node's class name.</p>
-<p><strong>Scope</strong> is managed through a chain of <code>Environment</code> objects. Each block or function call creates a new environment linked to its parent, enabling proper variable scoping and closures.</p>
+<p><strong>Scope</strong> is managed through a chain of <code>Environment</code> objects. Each block or function call creates a new environment linked to its parent, enabling proper variable scoping and closures. A single <code>_find_scope()</code> traversal is used for assignment to avoid the previous double-walk.</p>
 <p><strong>OOP</strong> is implemented through:</p>
 <table>
 <thead>
@@ -1645,36 +1686,54 @@
 <td><code>LuzLambda</code></td>
 <td>An anonymous function (short <code>fn(x) =&gt; expr</code> or long <code>fn(x) { body }</code>)</td>
 </tr>
+<tr>
+<td><code>LuzStruct</code> / <code>LuzStructInstance</code></td>
+<td>Value-type data container with typed fields</td>
+</tr>
+<tr>
+<td><code>LuzModule</code></td>
+<td>Wraps a module's exported namespace for <code>import "x" as alias</code></td>
+</tr>
 </tbody>
 </table>
 <p>Method calls automatically inject <code>self</code> and <code>super</code> into the method's local scope.</p>
 <p><strong>Control flow signals</strong> (<code>return</code>, <code>break</code>, <code>continue</code>) are implemented as Python exceptions that propagate up the call stack and are caught at the appropriate node handler.</p>
+<p><strong>Type enforcement</strong> at runtime: typed variable assignments call <code>_check_type()</code>, which handles generic collections, nullable types, fixed-size numeric bounds (<code>_enforce_type()</code>), and class hierarchy walking. A <code>_TYPE_PARSE_CACHE</code> class-level dict avoids re-parsing generic type strings on repeated assignments.</p>
 <h2 id="error-system-luzexceptionspy">Error system (<code>luz/exceptions.py</code>)<a class="headerlink" href="#error-system-luzexceptionspy" title="Permanent link">&para;</a></h2>
 <p>All errors inherit from <code>LuzError</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>LuzError
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── SyntaxFault       (lexer / parser errors)
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── SemanticFault     (type errors, undefined variables, wrong argument count…)
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   ├── AttributeNotFoundFault
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   └── ArityFault
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>├── RuntimeFault      (division by zero, index out of bounds…)
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>├── CastFault         (failed type conversion)
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>└── UserFault         (raised by the alert keyword)
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── SyntaxFault           (lexer / parser errors)
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── SemanticFault         (type errors, undefined variables, wrong argument count…)
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   ├── TypeViolationFault
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   ├── AttributeNotFoundFault
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│   └── ArityFault
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>├── RuntimeFault          (division by zero, index out of bounds…)
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>├── CastFault             (failed type conversion)
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>└── UserFault             (raised by the alert keyword)
 </span></code></pre></div>
 <p>Every error carries a <code>line</code> attribute that is attached when the error propagates through <code>visit()</code>.</p>
 <h2 id="file-overview">File overview<a class="headerlink" href="#file-overview" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>luz-lang/
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── main.py               # Entry point: REPL and file execution
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── main.py               # Entry point: REPL, file execution, --check mode
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├── luz/
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│   ├── tokens.py         # TokenType enum and Token class
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│   ├── lexer.py          # Lexer: text → tokens
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│   ├── parser.py         # Parser: tokens → AST + all AST node classes
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│   ├── interpreter.py    # Interpreter: executes the AST
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│   └── exceptions.py     # Full error class hierarchy
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>├── tests/
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│   └── test_suite.py     # Test suite
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>├── docs/                 # This documentation (MkDocs)
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>├── vscode-luz/           # VS Code syntax highlighting extension
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>└── examples/             # Example programs
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│   ├── typechecker.py    # Static type checker: AST → list[TypeCheckError]
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│   ├── interpreter.py    # Interpreter: executes the AST
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│   ├── exceptions.py     # Full error class hierarchy
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│   └── c_lexer/          # Optional C lexer (faster tokenisation on Windows/Linux)
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>│       ├── luz_lexer.c
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│       ├── bridge.py     # ctypes bridge
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│       └── Makefile
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>├── libs/                 # Standard library (luz-math, luz-random, luz-io, …)
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>├── tests/
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>│   ├── test_suite.py     # pytest test suite
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>│   └── fuzzer.py         # Random-input fuzzer
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>├── docs/                 # This documentation (MkDocs)
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>├── installer/            # Windows Inno Setup installer script
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>├── vscode-luz/           # VS Code language extension
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>└── examples/             # 28 example programs
 </span></code></pre></div>
 
 

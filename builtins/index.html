@@ -1166,6 +1166,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dot-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dot methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1603,6 +1631,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Strings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dot-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dot methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1640,14 +1696,15 @@
 <td>Print one or more values to stdout, separated by spaces</td>
 </tr>
 <tr>
-<td><code>listen(prompt)</code></td>
-<td>Print <code>prompt</code> and read a line from stdin. Numbers are auto-converted</td>
+<td><code>listen(prompt?)</code></td>
+<td>Print <code>prompt</code> and read a line from stdin. Automatically converts to <code>int</code> or <code>float</code> if the input is numeric; returns a <code>string</code> otherwise</td>
 </tr>
 </tbody>
 </table>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>write(&quot;hello&quot;)              # hello
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>write(1, 2, 3)              # 1 2 3
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>name = listen(&quot;Name: &quot;)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>name = listen(&quot;Name: &quot;)     # returns string
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>age  = listen(&quot;Age: &quot;)      # returns int if user types a number
 </span></code></pre></div>
 <hr />
 <h2 id="type-inspection">Type inspection<a class="headerlink" href="#type-inspection" title="Permanent link">&para;</a></h2>
@@ -1756,14 +1813,19 @@
 <td><code>clamp(15, 0, 10)</code> → <code>10</code></td>
 </tr>
 <tr>
-<td><code>max(a, b, ...)</code></td>
+<td><code>max(a, b, ...)</code> or <code>max(list)</code></td>
 <td>Maximum of values or a list</td>
 <td><code>max(3, 8, 2)</code> → <code>8</code></td>
 </tr>
 <tr>
-<td><code>min(a, b, ...)</code></td>
+<td><code>min(a, b, ...)</code> or <code>min(list)</code></td>
 <td>Minimum of values or a list</td>
 <td><code>min([5, 1, 9])</code> → <code>1</code></td>
+</tr>
+<tr>
+<td><code>sum(list)</code></td>
+<td>Sum all numeric elements of a list</td>
+<td><code>sum([1, 2, 3])</code> → <code>6</code></td>
 </tr>
 <tr>
 <td><code>sign(x)</code></td>
@@ -1812,6 +1874,10 @@
 <td><code>insert(list, index, value)</code></td>
 <td>Insert value at index, shifting elements right</td>
 </tr>
+<tr>
+<td><code>sum(list)</code></td>
+<td>Sum of all numeric elements</td>
+</tr>
 </tbody>
 </table>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nums = [10, 20, 30]
@@ -1819,10 +1885,11 @@
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>write(len(nums))      # 4
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>write(pop(nums))      # 40
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>write(pop(nums, 0))   # 10
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>items = [1, 2, 4]
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>insert(items, 2, 3)
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>write(items)          # [1, 2, 3, 4]
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>write(sum(nums))      # 50
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>items = [1, 2, 4]
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>insert(items, 2, 3)
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>write(items)          # [1, 2, 3, 4]
 </span></code></pre></div>
 <hr />
 <h2 id="dictionaries">Dictionaries<a class="headerlink" href="#dictionaries" title="Permanent link">&para;</a></h2>
@@ -1859,6 +1926,7 @@
 </span></code></pre></div>
 <hr />
 <h2 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h2>
+<h3 id="global-functions">Global functions<a class="headerlink" href="#global-functions" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1930,6 +1998,49 @@
 </tr>
 </tbody>
 </table>
+<h3 id="dot-methods">Dot methods<a class="headerlink" href="#dot-methods" title="Permanent link">&para;</a></h3>
+<p>All string operations are also available as dot methods and can be chained:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Equivalent global</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s.len()</code></td>
+<td><code>len(s)</code></td>
+</tr>
+<tr>
+<td><code>s.trim()</code></td>
+<td><code>trim(s)</code></td>
+</tr>
+<tr>
+<td><code>s.uppercase()</code></td>
+<td><code>uppercase(s)</code></td>
+</tr>
+<tr>
+<td><code>s.lowercase()</code></td>
+<td><code>lowercase(s)</code></td>
+</tr>
+<tr>
+<td><code>s.swap(old, new)</code></td>
+<td><code>swap(s, old, new)</code></td>
+</tr>
+<tr>
+<td><code>s.split(sep?)</code></td>
+<td><code>split(s, sep?)</code></td>
+</tr>
+</tbody>
+</table>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>title = &quot;  Hello World  &quot;
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>write(title.trim().lowercase())          # hello world
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>slug  = title.trim().lowercase().swap(&quot; &quot;, &quot;-&quot;)
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>write(slug)                              # hello-world
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>words = &quot;a,b,c&quot;.split(&quot;,&quot;)
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>write(words.join(&quot; | &quot;))                 # a | b | c
+</span></code></pre></div>
 
 
 

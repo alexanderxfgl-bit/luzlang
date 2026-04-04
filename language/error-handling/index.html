@@ -1651,7 +1651,11 @@
 </tr>
 <tr>
 <td><code>SemanticFault</code></td>
-<td>A name is undefined, wrong number of arguments, wrong type, etc.</td>
+<td>A name is undefined, wrong number of arguments, etc.</td>
+</tr>
+<tr>
+<td><code>TypeViolationFault</code></td>
+<td>A typed variable or parameter receives the wrong type</td>
 </tr>
 <tr>
 <td><code>RuntimeFault</code></td>
@@ -1667,6 +1671,7 @@
 </tr>
 </tbody>
 </table>
+<p>The static type checker also reports <code>TypeCheckFault</code> errors before execution for type annotation mismatches, arity errors, and unused variables.</p>
 <p>Every error message includes the source line number.</p>
 <h2 id="finally">finally<a class="headerlink" href="#finally" title="Permanent link">&para;</a></h2>
 <p>A <code>finally</code> block always runs after <code>attempt</code> and <code>rescue</code>, whether or not an error was raised. Use it for cleanup that must always happen:</p>
